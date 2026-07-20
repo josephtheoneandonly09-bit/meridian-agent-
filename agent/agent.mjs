@@ -243,6 +243,32 @@ async function gatherNews() {
   if (newsBrief.length) console.log(`News brief: ${newsBrief.length} headlines gathered.`);
 }
 
+/* ----------------------- live quotes (Finnhub) -------------- */
+/**
+ * Real-time quotes for the whole universe from Finnhub's free
+ * quote endpoint — no AI involved, exact numbers. This is the
+ * PRIMARY price source for mark-to-market, position sizing, and
+ * breaker math. Stooq daily closes remain the fallback, and the
+ * AI price-search remains a last resort on search-capable brains.
+ * Quotes land in the committee's briefing too, so a no-search
+ * brain (Groq) always has usable current prices to size with.
+ */
+const liveQuote = {}; // ticker -> current price
+
+async function gatherQuotes() {
+  if (!FINNHUB) return;
+  const universe = [...new Set([...state.positions.map((p) => p.ticker), ...config.watchlist])].slice(0, 12);
+  for (const sym of universe) {
+    try {
+      const d = await (await fetch(`https://finnhub.io/api/v1/quote?symbol=${sym}&token=${FINNHUB}`)).json();
+      // Finnhub quote: c = current price, pc = previous close
+      if (Number(d?.c) > 0) liveQuote[sym] = Number(d.c);
+    } catch (e) { console.warn(`Finnhub quote ${sym} failed:`, e.message); }
+  }
+  const n = Object.keys(liveQuote).length;
+  if (n) console.log(`Live quotes: ${n} symbols priced via Finnhub.`);
+}
+
 /* ----------------------- computed technicals --------------- */
 /**
  * Real quantitative pattern data, computed locally from free
@@ -447,7 +473,7 @@ Doctrine: never decide from one indicator; weigh technicals, fundamentals, macro
     ? "\nLive news wire (deduplicated from Marketaux/Finnhub; sentiment is -1..1 where provided — treat it as one input, not truth):\n" +
       newsBrief.map((n) => `- [${n.sym}] ${n.head}${n.sent != null ? ` (sent ${n.sent})` : ""}`).join("\n")
     : ""
-}${techBrief ? `\nComputed technicals (measured locally from daily closes — use these numbers rather than estimating; note they can lag intraday moves):\n${techBrief}` : ""}${macroBrief ? `\nMacro wire (FRED, primary-source): ${macroBrief}` : ""}${
+}${Object.keys(liveQuote).length ? `\nLive quotes (Finnhub, current prices — USE THESE for currentPrice and share sizing): ${Object.entries(liveQuote).map(([s, v]) => `${s} $${v.toFixed(2)}`).join(", ")}` : ""}${techBrief ? `\nComputed technicals (measured locally from daily closes — use these numbers rather than estimating; note they can lag intraday moves):\n${techBrief}` : ""}${macroBrief ? `\nMacro wire (FRED, primary-source): ${macroBrief}` : ""}${
   filingsBrief ? `\nFresh SEC filings on holdings (last 3 days — 8-Ks are material events, weigh them): ${filingsBrief}` : ""
 }${earningsBrief ? `\nEarnings in the next 7 days (earnings are high-variance — be cautious opening or holding oversized positions into them, especially in Conservative mode): ${earningsBrief}` : ""}${
   econBrief ? `\nEconomic releases ahead (major prints move the whole market — factor timing into sizing): ${econBrief}` : ""
@@ -488,20 +514,26 @@ async function notify(msg) {
 /* ----------------------- step 1: mark to market ------------ */
 async function markToMarket() {
   const updated = new Set();
-  if (state.positions.length && CAN_SEARCH) {
+  // 1) PRIMARY: exact live quotes from Finnhub (no AI, no guessing).
+  for (const p of state.positions) {
+    if (liveQuote[p.ticker] > 0) { p.price = liveQuote[p.ticker]; updated.add(p.ticker); }
+  }
+  // 2) LAST RESORT on search-capable brains: ask the AI to look up
+  //    anything still unpriced.
+  const missing = state.positions.filter((p) => !updated.has(p.ticker));
+  if (missing.length && CAN_SEARCH) {
     try {
-      const syms = state.positions.map((p) => p.ticker).join(", ");
+      const syms = missing.map((p) => p.ticker).join(", ");
       const out = await askCommittee(
         `Find the most recent US trading price for: ${syms}. JSON schema: {"prices":{"TICKER":123.45}}`, 800);
-      for (const p of state.positions) {
+      for (const p of missing) {
         const px = Number(out?.prices?.[p.ticker]);
         if (px > 0) { p.price = px; updated.add(p.ticker); }
       }
     } catch (e) { console.warn("AI price sync failed:", e.message); }
   }
-  // Fallback (and the primary path in no-search mode): any symbol the AI
-  // didn't price gets its last Stooq daily close, so the breaker math
-  // never runs on stale prices when data exists.
+  // 3) FALLBACK: last Stooq daily close for anything still unpriced,
+  //    so the breaker math never runs on stale prices when data exists.
   for (const p of state.positions) {
     if (!updated.has(p.ticker) && stooqClose[p.ticker] > 0) p.price = stooqClose[p.ticker];
   }
@@ -586,7 +618,11 @@ suggestedShares must fit the position-size and cash-reserve constraints at curre
 /* ----------------------- step 3: enforce & execute --------- */
 function execute(memo, sellOnly) {
   const shares = Math.max(0, Math.floor(Number(memo.suggestedShares) || 0));
-  const price  = Number(memo.currentPrice) || 0;
+  // Prefer the exact live quote over the AI's stated price; fall back to
+  // the memo's price, then the daily close. Never trade without a real number.
+  const price = liveQuote[memo.ticker] > 0 ? liveQuote[memo.ticker]
+              : (Number(memo.currentPrice) > 0 ? Number(memo.currentPrice)
+              : (stooqClose[memo.ticker] > 0 ? stooqClose[memo.ticker] : 0));
   const total  = totalValue();
 
   const reject = (why) => {
@@ -664,6 +700,7 @@ try {
     (now.getUTCDay() >= 1 && now.getUTCDay() <= 5 && now.getUTCHours() === 13 && now.getUTCMinutes() < 25);
   if (isPrepRun) {
     await Promise.all([
+      gatherQuotes().catch((e) => console.warn("quotes failed:", e.message)),
       gatherNews().catch((e) => console.warn("news gather failed:", e.message)),
       gatherTechnicals().catch((e) => console.warn("technicals failed:", e.message)),
       gatherMacro().catch((e) => console.warn("macro gather failed:", e.message)),
@@ -674,6 +711,7 @@ try {
     await preMarketPrep();
   } else if (isReportRun) {
     await Promise.all([
+      gatherQuotes().catch((e) => console.warn("quotes failed:", e.message)),
       gatherNews().catch((e) => console.warn("news gather failed:", e.message)),
       gatherTechnicals().catch((e) => console.warn("technicals failed:", e.message)),
       gatherMacro().catch((e) => console.warn("macro gather failed:", e.message)),
@@ -689,6 +727,7 @@ try {
     }
   } else if (marketLikelyOpen() || process.env.RUN_MODE === "force") {
     await Promise.all([
+      gatherQuotes().catch((e) => console.warn("quotes failed:", e.message)),
       gatherNews().catch((e) => console.warn("news gather failed:", e.message)),
       gatherTechnicals().catch((e) => console.warn("technicals failed:", e.message)),
       gatherMacro().catch((e) => console.warn("macro gather failed:", e.message)),
