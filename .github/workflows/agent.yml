@@ -1,0 +1,56 @@
+name: Meridian Agent
+
+on:
+  schedule:
+    # Trading cycles: every 15 min, 13:30–20:00 UTC, Mon–Fri
+    # (= 9:30am–4pm ET during daylight saving; shifts 1h in winter)
+    # GitHub cron is best-effort: expect runs every ~15–20 min in practice.
+    - cron: "*/15 14-19 * * 1-5"
+    - cron: "30,45 13 * * 1-5"
+    - cron: "0 20 * * 1-5"
+    # Pre-market prep: reads overnight news and writes the day's game plan
+    - cron: "0 13 * * 1-5"
+    # End-of-day report (agent switches to report mode after 21:00 UTC)
+    - cron: "10 21 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      run_mode:
+        description: "cycle | report | prep | force (force = trade even if market-hours check fails)"
+        default: "force"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: meridian
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run agent cycle
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          MARKETAUX_API_KEY: ${{ secrets.MARKETAUX_API_KEY }}
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          RUN_MODE: ${{ github.event.inputs.run_mode }}
+        run: node agent/agent.mjs
+
+      - name: Commit updated state
+        run: |
+          git config user.name "meridian-agent"
+          git config user.email "agent@users.noreply.github.com"
+          git add docs/data/state.json
+          git diff --cached --quiet || git commit -m "agent: cycle $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
