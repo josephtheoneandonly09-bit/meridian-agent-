@@ -1,0 +1,17 @@
+{
+  "cash": 100000,
+  "positions": [],
+  "history": [],
+  "ledger": [],
+  "reports": [],
+  "lessons": [],
+  "latestMemo": null,
+  "breakerTripped": false,
+  "breakerAcknowledged": false,
+  "lastRun": null,
+  "benchmark": [],
+  "rotationIndex": 0,
+  "reviewedToday": {},
+  "gamePlan": null,
+  "events": []
+}
