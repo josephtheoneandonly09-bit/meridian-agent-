@@ -1,0 +1,24 @@
+{
+  "provider": "gemini",
+  "geminiModel": "gemini-2.5-flash",
+  "mode": "aggressive",
+  "startingValue": 100000,
+  "maxPositionPct": 15,
+  "maxDailyTrades": 4,
+  "cashReservePct": 10,
+  "minConfidenceToTrade": 65,
+  "reviewLossPct": 8,
+  "reviewGainPct": 20,
+  "watchlist": [
+    "SPY",
+    "QQQ",
+    "NVDA",
+    "MSFT",
+    "AMZN",
+    "XLE",
+    "AVGO",
+    "META"
+  ],
+  "preferredSectors": "",
+  "groqModel": "llama-3.3-70b-versatile"
+}
