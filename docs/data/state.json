@@ -9,6 +9,27 @@
   ],
   "ledger": [
     {
+      "time": "2026-07-20T03:53:27.795Z",
+      "status": "SKIPPED — conviction 0.7% below floor 65%",
+      "ticker": "NVDA",
+      "action": "BUY",
+      "shares": 0,
+      "price": 202.81,
+      "confidence": 0.7,
+      "risk": "High",
+      "mode": "Aggressive",
+      "regime": "normal",
+      "thesis": "Nvidia's AI infrastructure growth and recent breakthroughs could drive stock price up. However, physical and financial limits may impact growth. Aggressive growth strategy aligns with this high-risk, high-reward investment.",
+      "evidence": {
+        "technical": "Recent price stability",
+        "fundamental": "AI breakthroughs and infrastructure growth",
+        "macro": "Low unemployment and moderate inflation",
+        "geopolitical": "US-Iran tensions may impact oil prices and global markets",
+        "sentiment": "Neutral sentiment for NVDA",
+        "historical": "Historical growth trends in tech sector"
+      }
+    },
+    {
       "time": "2026-07-20T03:33:15.007Z",
       "status": "SKIPPED — conviction 0.6% below floor 65%",
       "ticker": "QQQ",
@@ -54,52 +75,46 @@
   "reports": [],
   "lessons": [],
   "latestMemo": {
-    "ticker": "QQQ",
+    "ticker": "NVDA",
     "action": "BUY",
-    "currentPrice": 695.33,
+    "currentPrice": 202.81,
     "sector": "Tech",
-    "confidence": 0.6,
+    "confidence": 0.7,
     "risk": "High",
-    "expectedReward": "15% in the next quarter",
-    "expectedDownside": "10% in the next month",
-    "holdingPeriod": "3 months",
-    "suggestedShares": 68,
-    "thesis": "QQQ has a strong potential for growth due to its tech holdings, despite current geopolitical tensions and rising oil prices. The earnings season may bring positive surprises, and the overall market sentiment is not overly bearish. However, the high volatility and potential for market shocks require careful monitoring.",
+    "expectedReward": "15-20% in the next quarter",
+    "expectedDownside": "10-15% in the next month",
+    "holdingPeriod": "3-6 months",
+    "suggestedShares": 492,
+    "thesis": "Nvidia's AI infrastructure growth and recent breakthroughs could drive stock price up. However, physical and financial limits may impact growth. Aggressive growth strategy aligns with this high-risk, high-reward investment.",
     "evidence": {
-      "technical": "Current price is near its recent highs",
-      "fundamental": "Strong tech sector performance",
+      "technical": "Recent price stability",
+      "fundamental": "AI breakthroughs and infrastructure growth",
       "macro": "Low unemployment and moderate inflation",
-      "geopolitical": "Rising tensions in the Middle East",
-      "sentiment": "Neutral to slightly positive",
-      "historical": "Historical evidence favors recovery from market-wide shocks"
+      "geopolitical": "US-Iran tensions may impact oil prices and global markets",
+      "sentiment": "Neutral sentiment for NVDA",
+      "historical": "Historical growth trends in tech sector"
     },
     "risks": [
-      "Geopolitical tensions escalating",
-      "Earnings disappointments",
-      "Oil price spikes"
+      "Regulatory risks, intense competition, and global economic uncertainty"
     ],
     "alternativesConsidered": [
       {
-        "option": "SPY",
-        "whyRejected": "Broader market index with lower growth potential"
-      },
-      {
-        "option": "NVDA",
-        "whyRejected": "Recent news on AI infrastructure limits"
+        "option": "MSFT",
+        "whyRejected": "Lower growth potential compared to NVDA"
       }
     ],
     "news": [
-      "Microsoft Stock: Earnings Should Change Narrative Send Shares Back Over $500"
+      "China's Moonshot plans IPO, Nvidia's AI infrastructure growth"
     ],
     "marketRegime": "normal",
-    "regimeNote": "Monitoring the situation in the Middle East and its potential impact on the market",
-    "timestamp": "2026-07-20T03:33:15.007Z"
+    "regimeNote": "No signs of extreme market stress",
+    "timestamp": "2026-07-20T03:53:27.795Z"
   },
   "breakerTripped": false,
   "breakerAcknowledged": false,
-  "lastRun": "2026-07-20T03:33:15.007Z",
+  "lastRun": "2026-07-20T03:53:27.795Z",
   "benchmark": [],
-  "rotationIndex": 2,
+  "rotationIndex": 3,
   "reviewedToday": {},
   "gamePlan": null,
   "events": []
