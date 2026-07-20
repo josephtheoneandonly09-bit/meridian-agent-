@@ -9,6 +9,27 @@
   ],
   "ledger": [
     {
+      "time": "2026-07-20T03:33:15.007Z",
+      "status": "SKIPPED — conviction 0.6% below floor 65%",
+      "ticker": "QQQ",
+      "action": "BUY",
+      "shares": 0,
+      "price": 695.33,
+      "confidence": 0.6,
+      "risk": "High",
+      "mode": "Aggressive",
+      "regime": "normal",
+      "thesis": "QQQ has a strong potential for growth due to its tech holdings, despite current geopolitical tensions and rising oil prices. The earnings season may bring positive surprises, and the overall market sentiment is not overly bearish. However, the high volatility and potential for market shocks require careful monitoring.",
+      "evidence": {
+        "technical": "Current price is near its recent highs",
+        "fundamental": "Strong tech sector performance",
+        "macro": "Low unemployment and moderate inflation",
+        "geopolitical": "Rising tensions in the Middle East",
+        "sentiment": "Neutral to slightly positive",
+        "historical": "Historical evidence favors recovery from market-wide shocks"
+      }
+    },
+    {
       "time": "2026-07-20T03:21:15.007Z",
       "status": "SKIPPED — memo lacked usable size or price",
       "ticker": "MSFT",
@@ -33,47 +54,52 @@
   "reports": [],
   "lessons": [],
   "latestMemo": {
-    "ticker": "MSFT",
+    "ticker": "QQQ",
     "action": "BUY",
-    "currentPrice": 0,
+    "currentPrice": 695.33,
     "sector": "Tech",
     "confidence": 0.6,
-    "risk": "Moderate",
-    "expectedReward": "10-15%",
-    "expectedDownside": "5-8%",
-    "holdingPeriod": "3-6 months",
-    "suggestedShares": 666,
-    "thesis": "MSFT has a positive sentiment with a narrative change expected from upcoming earnings, and the tech sector has potential for growth despite market hesitation. The current geopolitical tensions and oil price increase may impact the market, but MSFT's strong fundamentals could help it weather the storm. With a cash reserve and position size constraints in mind, a moderate investment in MSFT is recommended.",
+    "risk": "High",
+    "expectedReward": "15% in the next quarter",
+    "expectedDownside": "10% in the next month",
+    "holdingPeriod": "3 months",
+    "suggestedShares": 68,
+    "thesis": "QQQ has a strong potential for growth due to its tech holdings, despite current geopolitical tensions and rising oil prices. The earnings season may bring positive surprises, and the overall market sentiment is not overly bearish. However, the high volatility and potential for market shocks require careful monitoring.",
     "evidence": {
-      "technical": "None",
-      "fundamental": "Strong earnings expected",
-      "macro": "Oil price increase and geopolitical tensions",
-      "geopolitical": "US-Iran conflict",
-      "sentiment": "Positive (0.07, 0.15)",
-      "historical": "None"
+      "technical": "Current price is near its recent highs",
+      "fundamental": "Strong tech sector performance",
+      "macro": "Low unemployment and moderate inflation",
+      "geopolitical": "Rising tensions in the Middle East",
+      "sentiment": "Neutral to slightly positive",
+      "historical": "Historical evidence favors recovery from market-wide shocks"
     },
     "risks": [
       "Geopolitical tensions escalating",
-      "Oil price increase impacting economy"
+      "Earnings disappointments",
+      "Oil price spikes"
     ],
     "alternativesConsidered": [
       {
+        "option": "SPY",
+        "whyRejected": "Broader market index with lower growth potential"
+      },
+      {
         "option": "NVDA",
-        "whyRejected": "AI infrastructure hitting physical and financial limits"
+        "whyRejected": "Recent news on AI infrastructure limits"
       }
     ],
     "news": [
       "Microsoft Stock: Earnings Should Change Narrative Send Shares Back Over $500"
     ],
     "marketRegime": "normal",
-    "regimeNote": "Market is hesitant due to earnings loom and geopolitical tensions, but no signs of extreme stress",
-    "timestamp": "2026-07-20T03:21:15.007Z"
+    "regimeNote": "Monitoring the situation in the Middle East and its potential impact on the market",
+    "timestamp": "2026-07-20T03:33:15.007Z"
   },
   "breakerTripped": false,
   "breakerAcknowledged": false,
-  "lastRun": "2026-07-20T03:21:15.007Z",
+  "lastRun": "2026-07-20T03:33:15.007Z",
   "benchmark": [],
-  "rotationIndex": 1,
+  "rotationIndex": 2,
   "reviewedToday": {},
   "gamePlan": null,
   "events": []
