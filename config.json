@@ -1,7 +1,7 @@
 {
   "provider": "gemini",
   "geminiModel": "gemini-2.5-flash",
-  "mode": "aggressive",
+  "mode": "conservative",
   "startingValue": 100000,
   "maxPositionPct": 15,
   "maxDailyTrades": 4,
