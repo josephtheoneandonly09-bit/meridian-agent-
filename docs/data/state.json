@@ -75,6 +75,26 @@
   "reports": [
     {
       "date": "2026-07-20",
+      "marketSummary": "Major indexes fell, with Iran and earnings season in focus",
+      "majorNews": [
+        "Iran-Saudi tensions escalate",
+        "Earnings season underway"
+      ],
+      "economicEvents": "Monthly State Retail Sales on 2026-07-23",
+      "fedUpdate": "Fed funds rate at 3.63%",
+      "geopolitics": "US-Iran tensions, Saudi naval blockade",
+      "stocksWatched": [
+        "NVDA",
+        "MSFT",
+        "AVGO"
+      ],
+      "tradesComment": "No trades executed, awaiting clearer market direction",
+      "riskAssessment": "Elevated due to geopolitical tensions and earnings uncertainty",
+      "planForTomorrow": "Monitor market reaction to earnings reports and geopolitical developments",
+      "timestamp": "2026-07-20T23:35:12.098Z"
+    },
+    {
+      "date": "2026-07-20",
       "marketSummary": "Major indexes down, earnings season in focus",
       "majorNews": [
         "Iran tensions",
@@ -132,12 +152,16 @@
   },
   "breakerTripped": false,
   "breakerAcknowledged": false,
-  "lastRun": "2026-07-20T22:41:11.773Z",
+  "lastRun": "2026-07-20T23:35:12.098Z",
   "benchmark": [],
   "rotationIndex": 7,
   "reviewedToday": {},
   "gamePlan": null,
   "events": [
+    {
+      "t": "2026-07-20T23:35:25.756Z",
+      "msg": "📄 Daily report filed for 2026-07-20: Major indexes fell, with Iran and earnings season in focus"
+    },
     {
       "t": "2026-07-20T22:41:24.681Z",
       "msg": "📄 Daily report filed for 2026-07-20: Major indexes down, earnings season in focus"
