@@ -72,7 +72,27 @@
       }
     }
   ],
-  "reports": [],
+  "reports": [
+    {
+      "date": "2026-07-20",
+      "marketSummary": "Major indexes down, earnings season in focus",
+      "majorNews": [
+        "Iran tensions",
+        "Earnings season"
+      ],
+      "economicEvents": "Monthly State Retail Sales on 2026-07-23",
+      "fedUpdate": "Fed funds rate 3.63%, Unemployment 4.2%",
+      "geopolitics": "US-Iran tensions, Yemen's Houthis declare naval blockade",
+      "stocksWatched": [
+        "MSFT",
+        "NVDA"
+      ],
+      "tradesComment": "No trades executed, awaiting clearer market direction",
+      "riskAssessment": "Elevated due to geopolitical tensions and earnings uncertainty",
+      "planForTomorrow": "Monitor market reaction to earnings reports and geopolitical developments",
+      "timestamp": "2026-07-20T22:41:11.773Z"
+    }
+  ],
   "lessons": [],
   "latestMemo": {
     "ticker": "SPY",
@@ -112,10 +132,15 @@
   },
   "breakerTripped": false,
   "breakerAcknowledged": false,
-  "lastRun": "2026-07-20T19:18:15.314Z",
+  "lastRun": "2026-07-20T22:41:11.773Z",
   "benchmark": [],
   "rotationIndex": 7,
   "reviewedToday": {},
   "gamePlan": null,
-  "events": []
+  "events": [
+    {
+      "t": "2026-07-20T22:41:24.681Z",
+      "msg": "📄 Daily report filed for 2026-07-20: Major indexes down, earnings season in focus"
+    }
+  ]
 }
