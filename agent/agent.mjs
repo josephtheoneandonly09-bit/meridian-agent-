@@ -599,11 +599,18 @@ async function decisionCycle() {
   }
 
   const schema = `JSON schema:
-{"ticker":"","action":"BUY|SELL|HOLD|AVOID","currentPrice":0,"sector":"","confidence":0,"risk":"Low|Moderate|High|Very High","expectedReward":"","expectedDownside":"","holdingPeriod":"","suggestedShares":0,"thesis":"2-3 plain sentences","evidence":{"technical":"","fundamental":"","macro":"","geopolitical":"","sentiment":"","historical":""},"risks":[""],"alternativesConsidered":[{"option":"","whyRejected":""}],"news":[""],"marketRegime":"normal|stressed|emergency","regimeNote":""}
+{"ticker":"","action":"BUY|SELL|HOLD|AVOID","currentPrice":0,"sector":"","confidence":<integer 0-100, e.g. 72 — NOT a decimal like 0.72>,"risk":"Low|Moderate|High|Very High","expectedReward":"","expectedDownside":"","holdingPeriod":"","suggestedShares":0,"thesis":"2-3 plain sentences","evidence":{"technical":"","fundamental":"","macro":"","geopolitical":"","sentiment":"","historical":""},"risks":[""],"alternativesConsidered":[{"option":"","whyRejected":""}],"news":[""],"marketRegime":"normal|stressed|emergency","regimeNote":""}
 suggestedShares must fit the position-size and cash-reserve constraints at currentPrice.`;
 
   const memo = await askCommittee(committeeContext() + "\n\n" + ask + "\n" + schema);
   memo.timestamp = now.toISOString();
+  // Normalize confidence: some models report 0.7 (a 0–1 decimal) when the
+  // schema asks for 0–100. Convert so the conviction floor judges fairly.
+  if (memo.confidence != null) {
+    let c = Number(memo.confidence);
+    if (c > 0 && c <= 1) c = c * 100;
+    memo.confidence = Math.max(0, Math.min(100, Math.round(c)));
+  }
   state.latestMemo = memo;
 
   // Emergency Market Protocol: flag it, reduce nothing automatically
