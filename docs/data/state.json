@@ -79,6 +79,25 @@
   "reports": [
     {
       "date": "2026-07-21",
+      "marketSummary": "SPY $748.28, QQQ $708.97, mixed sentiment",
+      "majorNews": [
+        "U.S. trade tensions escalate",
+        "Chip stocks recovery"
+      ],
+      "economicEvents": "Monthly State Retail Sales on 2026-07-23",
+      "fedUpdate": "Fed funds rate: 3.63%",
+      "geopolitics": "US-Iran war, Pakistan seeks US backstop",
+      "stocksWatched": [
+        "NVDA",
+        "MSFT"
+      ],
+      "tradesComment": "No trades, conviction below floor",
+      "riskAssessment": "Cautious, circuit breaker at -20% drawdown",
+      "planForTomorrow": "Monitor market, await economic releases",
+      "timestamp": "2026-07-21T23:15:40.060Z"
+    },
+    {
+      "date": "2026-07-21",
       "marketSummary": "Wall St ends higher on chip stocks recovery",
       "majorNews": [
         "Microsoft's AI Transformation Is Misunderstood",
@@ -177,12 +196,16 @@
   },
   "breakerTripped": false,
   "breakerAcknowledged": false,
-  "lastRun": "2026-07-21T22:14:46.797Z",
+  "lastRun": "2026-07-21T23:15:40.060Z",
   "benchmark": [],
   "rotationIndex": 2,
   "reviewedToday": {},
   "gamePlan": null,
   "events": [
+    {
+      "t": "2026-07-21T23:15:53.472Z",
+      "msg": "📄 Daily report filed for 2026-07-21: SPY $748.28, QQQ $708.97, mixed sentiment"
+    },
     {
       "t": "2026-07-21T22:14:59.709Z",
       "msg": "📄 Daily report filed for 2026-07-21: Wall St ends higher on chip stocks recovery"
