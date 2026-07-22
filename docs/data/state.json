@@ -9,6 +9,10 @@
     {
       "t": "2026-07-21",
       "v": 100000
+    },
+    {
+      "t": "2026-07-22",
+      "v": 100000
     }
   ],
   "ledger": [
@@ -157,48 +161,52 @@
   ],
   "lessons": [],
   "latestMemo": {
-    "ticker": "QQQ",
+    "ticker": "SPY",
     "action": "HOLD",
-    "currentPrice": 709.51,
-    "sector": "Technology",
+    "currentPrice": 749.08,
+    "sector": "Broad Market",
     "confidence": 60,
-    "risk": "Moderate",
-    "expectedReward": "Potential for long-term growth",
-    "expectedDownside": "Market volatility and downturns",
-    "holdingPeriod": "Long-term",
+    "risk": "Low",
+    "expectedReward": "4-6%",
+    "expectedDownside": "2-4%",
+    "holdingPeriod": "Medium-term",
     "suggestedShares": 0,
-    "thesis": "The QQQ is a broad technology ETF with a diverse range of holdings, but current market conditions and geopolitical tensions do not warrant a buy at this time. The fund's performance is closely tied to the overall market, and with the VIX at 18.65, it's prudent to exercise caution. Given the conservative operating mode and capital preservation mandate, it's best to hold off on making a trade.",
+    "thesis": "The market is currently stable with a low VIX close and moderate unemployment rate. Earnings reports from major companies like MSFT and META may bring volatility, but the broad market ETF SPY provides diversification. No strong evidence supports a buy or sell action at this time.",
     "evidence": {
-      "technical": "The 10y-2y yield spread is 0.39%, indicating a potential economic slowdown",
-      "fundamental": "The unemployment rate is 4.2%, which is relatively low, but the CPI inflation is 3.5% YoY, which may impact consumer spending",
-      "macro": "The Fed funds rate is 3.63%, which may impact borrowing and spending",
-      "geopolitical": "The Houthi warning to shipping companies may lead to increased tensions and market volatility",
-      "sentiment": "The sentiment for META is 0.66, but overall market sentiment is mixed",
-      "historical": "Historically, the QQQ has been volatile, but has provided long-term growth"
+      "technical": "Stable VIX close",
+      "fundamental": "Moderate unemployment rate",
+      "macro": "Low Fed funds rate",
+      "geopolitical": "Tensions with Iran",
+      "sentiment": "Neutral",
+      "historical": "Recent market stability"
     },
     "risks": [
-      "Market downturns",
-      "Geopolitical tensions",
-      "Economic slowdown"
+      "Earnings report volatility",
+      "Geopolitical tensions"
     ],
     "alternativesConsidered": [
       {
-        "option": "SPY",
-        "whyRejected": "The SPY is also a broad market ETF, but the QQQ is more focused on technology, which may be more volatile"
+        "option": "QQQ",
+        "whyRejected": "Higher volatility than SPY"
+      },
+      {
+        "option": "NVDA",
+        "whyRejected": "Earnings report upcoming, high variance"
       }
     ],
     "news": [
-      "Tankers with Saudi crude turn back as Houthis open new front in US-Iran war"
+      "MSFT: How To Deal With 2.5 Years Of Dead Money",
+      "META: $420 Billion in Hidden Debt"
     ],
     "marketRegime": "normal",
-    "regimeNote": "The market is currently in a normal regime, but geopolitical tensions and economic uncertainty may lead to increased volatility",
-    "timestamp": "2026-07-21T18:51:36.462Z"
+    "regimeNote": "No signs of market stress or emergency",
+    "timestamp": "2026-07-22T17:50:48.691Z"
   },
   "breakerTripped": false,
   "breakerAcknowledged": false,
-  "lastRun": "2026-07-22T00:11:51.074Z",
+  "lastRun": "2026-07-22T17:50:48.691Z",
   "benchmark": [],
-  "rotationIndex": 2,
+  "rotationIndex": 3,
   "reviewedToday": {},
   "gamePlan": null,
   "events": [
