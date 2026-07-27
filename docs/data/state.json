@@ -136,6 +136,28 @@
   ],
   "reports": [
     {
+      "date": "2026-07-27",
+      "marketSummary": "Mixed market with tech pain and gains elsewhere",
+      "majorNews": [
+        "META: Time To Be Greedy",
+        "MSFT: Headline-Driven Market Stumbles",
+        "AMZN: AWS Must Justify The AI Bill"
+      ],
+      "economicEvents": "Debt to GDP, GDP, and Personal Income on 2026-07-30",
+      "fedUpdate": "Fed funds rate at 3.63%",
+      "geopolitics": "",
+      "stocksWatched": [
+        "META",
+        "MSFT",
+        "AMZN",
+        "NVDA"
+      ],
+      "tradesComment": "No trades today due to low conviction and earnings uncertainty",
+      "riskAssessment": "Earnings reports and macro releases pose risk, maintaining high cash reserve",
+      "planForTomorrow": "Reevaluate conviction thresholds and position sizing, prioritize earnings and macro factors",
+      "timestamp": "2026-07-27T22:43:33.804Z"
+    },
+    {
       "date": "2026-07-24",
       "marketSummary": "Volatility persists, with mixed sentiment and geopolitical tensions",
       "majorNews": [
@@ -383,12 +405,16 @@
   },
   "breakerTripped": false,
   "breakerAcknowledged": false,
-  "lastRun": "2026-07-27T19:01:03.669Z",
+  "lastRun": "2026-07-27T22:43:33.804Z",
   "benchmark": [],
   "rotationIndex": 6,
   "reviewedToday": {},
   "gamePlan": null,
   "events": [
+    {
+      "t": "2026-07-27T22:43:46.552Z",
+      "msg": "📄 Daily report filed for 2026-07-27: Mixed market with tech pain and gains elsewhere"
+    },
     {
       "t": "2026-07-24T23:41:54.042Z",
       "msg": "🧭 Weekly self-review: This week's decisions were overly cautious, with all potential buys skipped due to low conviction or position sizing issues. The committee should reevaluate its conviction thresholds and position sizing strategy to balance risk and potential returns. Ignoring earnings dates and macroeconomic releases posed a risk. The committee should prioritize these factors in future decisions and be more discerning in its use of sentiment analysis."
