@@ -140,6 +140,27 @@
   ],
   "reports": [
     {
+      "date": "2026-07-28",
+      "marketSummary": "S&P 500 ends higher, awaiting tech earnings",
+      "majorNews": [
+        "Tech earnings upcoming",
+        "J&J talc settlement"
+      ],
+      "economicEvents": "Debt to GDP, GDP, and Personal Income on 2026-07-30",
+      "fedUpdate": "Fed funds rate at 3.63%",
+      "geopolitics": "",
+      "stocksWatched": [
+        "MSFT",
+        "NVDA",
+        "AMZN",
+        "META"
+      ],
+      "tradesComment": "No trades due to low conviction and earnings uncertainty",
+      "riskAssessment": "Moderate, due to upcoming earnings and economic releases",
+      "planForTomorrow": "Monitor earnings reports and economic data, reassess conviction levels",
+      "timestamp": "2026-07-28T22:40:59.155Z"
+    },
+    {
       "date": "2026-07-27",
       "marketSummary": "Mixed market with tech pain and gains elsewhere",
       "majorNews": [
@@ -431,12 +452,16 @@
   },
   "breakerTripped": false,
   "breakerAcknowledged": false,
-  "lastRun": "2026-07-28T18:54:51.188Z",
+  "lastRun": "2026-07-28T22:40:59.155Z",
   "benchmark": [],
   "rotationIndex": 1,
   "reviewedToday": {},
   "gamePlan": null,
   "events": [
+    {
+      "t": "2026-07-28T22:41:11.914Z",
+      "msg": "📄 Daily report filed for 2026-07-28: S&P 500 ends higher, awaiting tech earnings"
+    },
     {
       "t": "2026-07-27T23:45:08.436Z",
       "msg": "📄 Daily report filed for 2026-07-27: Mixed market with tech pain and gains elsewhere"
