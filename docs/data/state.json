@@ -141,6 +141,26 @@
   "reports": [
     {
       "date": "2026-07-28",
+      "marketSummary": "Dow jumps as AI trade wobbles",
+      "majorNews": [
+        "MSFT favoring old economy stocks",
+        "AVGO growth story reshaped by Qualcomm’s Samsung expansion"
+      ],
+      "economicEvents": "Debt to GDP, GDP, and Personal Income on 2026-07-30",
+      "fedUpdate": "Fed funds rate at 3.63%",
+      "geopolitics": "",
+      "stocksWatched": [
+        "MSFT",
+        "AVGO",
+        "NVDA"
+      ],
+      "tradesComment": "No trades due to low conviction and upcoming earnings",
+      "riskAssessment": "Earnings reports and macro releases pose risk",
+      "planForTomorrow": "Reevaluate conviction thresholds and position sizing strategy",
+      "timestamp": "2026-07-28T23:33:32.466Z"
+    },
+    {
+      "date": "2026-07-28",
       "marketSummary": "S&P 500 ends higher, awaiting tech earnings",
       "majorNews": [
         "Tech earnings upcoming",
@@ -452,12 +472,16 @@
   },
   "breakerTripped": false,
   "breakerAcknowledged": false,
-  "lastRun": "2026-07-28T22:40:59.155Z",
+  "lastRun": "2026-07-28T23:33:32.466Z",
   "benchmark": [],
   "rotationIndex": 1,
   "reviewedToday": {},
   "gamePlan": null,
   "events": [
+    {
+      "t": "2026-07-28T23:33:44.913Z",
+      "msg": "📄 Daily report filed for 2026-07-28: Dow jumps as AI trade wobbles"
+    },
     {
       "t": "2026-07-28T22:41:11.914Z",
       "msg": "📄 Daily report filed for 2026-07-28: S&P 500 ends higher, awaiting tech earnings"
