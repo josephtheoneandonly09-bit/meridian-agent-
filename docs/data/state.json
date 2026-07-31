@@ -215,6 +215,27 @@
   ],
   "reports": [
     {
+      "date": "2026-07-31",
+      "marketSummary": "US market ends higher",
+      "majorNews": [
+        "Microsoft and Amazon among Nasdaq's weekly gainers",
+        "S&P 500 at key battleground level"
+      ],
+      "economicEvents": "Chicago Fed Advance Retail Trade Summary on 2026-08-06",
+      "fedUpdate": "Fed funds rate: 3.63%",
+      "geopolitics": "",
+      "stocksWatched": [
+        "MSFT",
+        "AMZN",
+        "SPY",
+        "QQQ"
+      ],
+      "tradesComment": "No trades executed today due to low conviction or position sizing issues",
+      "riskAssessment": "Low to moderate risk, VIX close: 17.09",
+      "planForTomorrow": "Reevaluate conviction thresholds and position sizing strategy to balance risk and potential returns",
+      "timestamp": "2026-07-31T22:40:38.771Z"
+    },
+    {
       "date": "2026-07-30",
       "marketSummary": "Mixed earnings and easing oil prices support markets",
       "majorNews": [
@@ -583,6 +604,10 @@
   ],
   "lessons": [
     {
+      "week": "2026-07-31",
+      "text": "This week's decisions were overly cautious, with potential buys skipped due to size or conviction issues. The committee should reevaluate its conviction thresholds and position sizing strategy. Ignoring earnings dates and macroeconomic releases posed a risk. Sentiment analysis was misleading at times. The committee must balance capital preservation and growth aspirations."
+    },
+    {
       "week": "2026-07-24",
       "text": "This week's decisions were overly cautious, with all potential buys skipped due to low conviction or position sizing issues. The committee should reevaluate its conviction thresholds and position sizing strategy to balance risk and potential returns. Ignoring earnings dates and macroeconomic releases posed a risk. The committee should prioritize these factors in future decisions and be more discerning in its use of sentiment analysis."
     },
@@ -630,12 +655,20 @@
   },
   "breakerTripped": false,
   "breakerAcknowledged": false,
-  "lastRun": "2026-07-31T18:56:39.419Z",
+  "lastRun": "2026-07-31T22:40:38.771Z",
   "benchmark": [],
   "rotationIndex": 2,
   "reviewedToday": {},
   "gamePlan": null,
   "events": [
+    {
+      "t": "2026-07-31T22:40:53.283Z",
+      "msg": "🧭 Weekly self-review: This week's decisions were overly cautious, with potential buys skipped due to size or conviction issues. The committee should reevaluate its conviction thresholds and position sizing strategy. Ignoring earnings dates and macroeconomic releases posed a risk. Sentiment analysis was misleading at times. The committee must balance capital preservation and growth aspirations."
+    },
+    {
+      "t": "2026-07-31T22:40:52.622Z",
+      "msg": "📄 Daily report filed for 2026-07-31: US market ends higher"
+    },
     {
       "t": "2026-07-30T23:37:35.963Z",
       "msg": "📄 Daily report filed for 2026-07-30: Mixed earnings and easing oil prices support markets"
