@@ -274,6 +274,27 @@
   "reports": [
     {
       "date": "2026-08-07",
+      "marketSummary": "Mixed sentiment, weak US jobs data, and escalating Middle East turmoil",
+      "majorNews": [
+        "Saudi Arabia, Turkey, Pakistan pledge mutual defence",
+        "US Senate passes Russia sanctions",
+        "Dollar drops, Brent climbs"
+      ],
+      "economicEvents": "Employment Situation tomorrow, Consumer Price Index on 2026-08-12",
+      "fedUpdate": "Fed funds rate 3.63%, weak US jobs data pushes out Fed hike expectations",
+      "geopolitics": "Middle East turmoil escalates, US-Russia tensions rise",
+      "stocksWatched": [
+        "MSFT",
+        "AMZN",
+        "QQQ"
+      ],
+      "tradesComment": "No trades today, awaiting key economic releases and assessing geopolitical risks",
+      "riskAssessment": "Moderate, due to geopolitical uncertainty and upcoming economic releases",
+      "planForTomorrow": "Monitor Employment Situation report, assess market reaction, and consider trades based on conviction thresholds and position sizing strategy",
+      "timestamp": "2026-08-07T23:08:23.947Z"
+    },
+    {
+      "date": "2026-08-07",
       "marketSummary": "Mixed sentiment, weak US jobs data, and geopolitical tensions",
       "majorNews": [
         "US Senate passes Russia sanctions",
@@ -845,6 +866,10 @@
   "lessons": [
     {
       "week": "2026-08-07",
+      "text": "This week's decisions were overly cautious, ignoring potential buys due to size or conviction issues. The committee should reevaluate its conviction thresholds and position sizing strategy to balance risk and returns. Sentiment analysis was misleading at times, and the committee must be more discerning in its use, prioritizing earnings dates and macroeconomic releases. The committee should also consider the impact of economic indicators such as the Fed funds rate and unemployment rate on investment decisions. Oversizing and chasing news were avoided, but the committee should continue to monitor these potential pitfalls."
+    },
+    {
+      "week": "2026-08-07",
       "text": "This week's decisions were overly cautious, with potential buys skipped due to size or conviction issues. The committee should reevaluate its conviction thresholds and position sizing strategy to balance risk and potential returns. Ignoring earnings dates and macroeconomic releases posed a risk. Sentiment analysis was misleading at times, and the committee must be more discerning in its use. The committee should prioritize earnings dates and macroeconomic releases in future decisions."
     },
     {
@@ -854,10 +879,6 @@
     {
       "week": "2026-07-31",
       "text": "This week's decisions were overly cautious, with potential buys skipped due to size or conviction issues. The committee should reevaluate its conviction thresholds and position sizing strategy to balance risk and potential returns. Ignoring earnings dates and macroeconomic releases posed a risk. Sentiment analysis was misleading at times, and the committee must be more discerning in its use. The committee should prioritize earnings dates and macroeconomic releases in future decisions."
-    },
-    {
-      "week": "2026-07-31",
-      "text": "This week's decisions were overly cautious, with potential buys skipped due to size or conviction issues. The committee should reevaluate its conviction thresholds and position sizing strategy. Ignoring earnings dates and macroeconomic releases posed a risk. Sentiment analysis was misleading at times. The committee must balance capital preservation and growth aspirations."
     }
   ],
   "latestMemo": {
@@ -898,12 +919,20 @@
   },
   "breakerTripped": false,
   "breakerAcknowledged": false,
-  "lastRun": "2026-08-07T22:06:44.717Z",
+  "lastRun": "2026-08-07T23:08:23.947Z",
   "benchmark": [],
   "rotationIndex": 7,
   "reviewedToday": {},
   "gamePlan": null,
   "events": [
+    {
+      "t": "2026-08-07T23:08:38.900Z",
+      "msg": "🧭 Weekly self-review: This week's decisions were overly cautious, ignoring potential buys due to size or conviction issues. The committee should reevaluate its conviction thresholds and position sizing strategy to balance risk and returns. Sentiment analysis was misleading at times, and the committee must be more discerning in its use, prioritizing earnings dates and macroeconomic releases. The committee should also consider the impact of economic indicators such as the Fed funds rate and unemployment rate on investment decisions. Oversizing and chasing news were avoided, but the committee should continue to monitor these potential pitfalls."
+    },
+    {
+      "t": "2026-08-07T23:08:38.310Z",
+      "msg": "📄 Daily report filed for 2026-08-07: Mixed sentiment, weak US jobs data, and escalating Middle East turmoil"
+    },
     {
       "t": "2026-08-07T22:07:01.247Z",
       "msg": "🧭 Weekly self-review: This week's decisions were overly cautious, with potential buys skipped due to size or conviction issues. The committee should reevaluate its conviction thresholds and position sizing strategy to balance risk and potential returns. Ignoring earnings dates and macroeconomic releases posed a risk. Sentiment analysis was misleading at times, and the committee must be more discerning in its use. The committee should prioritize earnings dates and macroeconomic releases in future decisions."
